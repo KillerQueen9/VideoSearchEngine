@@ -9,7 +9,7 @@ searchButton.addEventListener("click", function() {
 
 async function search(query) {
   const response = await fetch(
-    `https://api.example.com/search?q=${query}&type=video`
+    `https://api.cognitive.microsoft.com/bing/v7.0/videos/search?q=sailing+dinghies&mkt=en-us=${query}&type=video`
   );
   return response.json();
 }
@@ -24,7 +24,7 @@ function displayResults(data) {
       <div>
         <img src="${thumbnail}" alt="${title}">
         <h2>${title}</h2>
-        <a href="https://www.example.com/watch?v=${videoId}">Watch</a>
+        <a href="https://api.cognitive.microsoft.com/bing/v7.0/videos/search?q=sailing+dinghies&mkt=en-us=${videoId}">Watch</a>
       </div>
     `;
   });
